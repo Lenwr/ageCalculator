@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+  }
+@font-face {
+  font-family: 'PoppinsExtraBoldItalic';
+  src: url("assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: 'PoppinsBold';
+  src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+:root{
+  --primary : hsl(259, 100%, 65%) ;
+  --secondary : hsl(0, 100%, 67%) ;
+  --1 : hsl(0, 0%, 100%);
+  --2 : hsl(0, 0%, 94%);
+--3 : hsl(0, 0%, 86%);
+--4 : hsl(0, 1%, 44%);
+--5 : hsl(0, 0%, 8%);
+}
+
+body{
+  font-family: poppins;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+}
