@@ -3,31 +3,33 @@
     <div class="up">
       <form [formGroup]="myForm">
       <span>
-        <p>
+        <p [ngClass]="{ 'errorP': myForm.get('month')!.invalid && (myForm.get('month')!.dirty || myForm.get('month')!.touched) }">
           DAY
         </p>
-        <input type="number" id="day" formControlName="day" required>
-        <div *ngIf="myForm.get('day')!.invalid && (myForm.get('day')!.dirty || myForm.get('day')!.touched)">
-          <div *ngIf="myForm.get('day')!.hasError('required')">Day is required.</div>
-          <div *ngIf="myForm.get('day')!.hasError('min') || myForm.get('day')!.hasError('max')">Day must be between 1 and 31.</div>
+        <input type="number" id="day" formControlName="day" placeholder="DD" required>
+        <div  class="error"  *ngIf="myForm.get('day')!.invalid && (myForm.get('day')!.dirty || myForm.get('day')!.touched)">
+          <div class="error"  *ngIf="myForm.get('day')!.hasError('required')">The field is required</div>
+          <div class="error"  *ngIf="myForm.get('day')!.hasError('min') || myForm.get('day')!.hasError('max')">Day must be between 1 and 31.</div>
         </div>
       </span>
         <span>
         <p>
           MONTH
         </p>
-        <input type="number" id="month" formControlName="month">
-            <div *ngIf="myForm.get('month')!.invalid && (myForm.get('month')!.dirty || myForm.get('month')!.touched)">
-      <div *ngIf="myForm.get('month')!.hasError('min') || myForm.get('month')!.hasError('max')">Month must be between 1 and 12.</div>
+        <input [ngClass]="{ 'errorInput': myForm.get('month')!.invalid }" type="number" id="month" formControlName="month"  placeholder="MM">
+            <div class="error"   *ngIf="myForm.get('month')!.invalid && (myForm.get('month')!.dirty || myForm.get('month')!.touched)">
+               <div class="error"  *ngIf="myForm.get('day')!.hasError('required')">The field is required</div>
+      <div class="error"  *ngIf="myForm.get('month')!.hasError('min') || myForm.get('month')!.hasError('max')">Month must be between 1 and 12.</div>
     </div>
       </span>
         <span>
         <p>
           YEAR
         </p>
-        <input type="number" formControlName="year">
-            <div *ngIf="myForm.get('year')!.invalid && (myForm.get('year')!.dirty || myForm.get('year')!.touched)">
-      <div *ngIf="myForm.get('year')!.hasError('min')">Year must be 1900 or later.</div>
+        <input type="number" formControlName="year" placeholder="YYYY">
+            <div  class="error"  *ngIf="myForm.get('year')!.invalid && (myForm.get('year')!.dirty || myForm.get('year')!.touched)">
+               <div class="error"  *ngIf="myForm.get('day')!.hasError('required')">The field is required</div>
+      <div class="error"  *ngIf="myForm.get('year')!.hasError('min')">Year must be 1900 or later.</div>
     </div>
       </span>
       </form>
@@ -36,7 +38,7 @@
     <div class="separateur">
       <span></span>
       <img (click)="calculate()"   src="/assets/icon-arrow.svg" alt="">
-      <span></span>
+      <span class="onlyMobile"></span>
     </div>
     <div class="down">
      <span>

@@ -6,7 +6,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.css']
+  styleUrls: ['./calculator.component.css','./mobile.css']
 })
 export class CalculatorComponent implements OnInit{
   years : number = 0 ;
@@ -20,8 +20,8 @@ export class CalculatorComponent implements OnInit{
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
       day: ['', [Validators.required, Validators.min(1), Validators.max(31)]],
-      month: ['', [Validators.min(1), Validators.max(12)]],
-      year: ['', [Validators.min(1900), Validators.max(2022)]]
+      month: ['', [Validators.required,Validators.min(1), Validators.max(12)]],
+      year: ['', [Validators.required,Validators.min(1900), Validators.max(2022)]]
     });
   }
 ngOnInit() {

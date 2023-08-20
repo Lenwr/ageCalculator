@@ -1,60 +1,66 @@
 .container{
   width: 100%;
-  height: 100vh;
+  height: 105vh;
   background-color: var(--2);
   display: flex;
   justify-content:center;
+  align-items: center;
 }
 .card{
-  margin-top: 30%;
-  width: 90%;
-  height: 75vh;
+  width: 50%;
+  height: 70%;
   background-color: white;
   border-radius: 2em 2em 8em 2em ;
 }
 .up form{
-  width: 90%;
+  width: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 10% 0 0 10% ;
+  margin: 5% 0 0 10%;
 }
+
 .up span p{
   margin-bottom: 5%;
   font-family: PoppinsBold;
   letter-spacing: 3px;
 }
 .up span input{
-  width: 60%;
-  height: 2.3em;
+  width: 70%;
+  height: 2.5em;
   border-radius: 0.2em;
   border: 0.5px solid var(--4);
- padding-left: 0.8em;
+  padding-left: 0.8em;
   font-size: 1.5em;
   font-weight: bolder;
 }
+
 .separateur{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 2%;
   height: 5em;
 }
+.onlyMobile{
+  display: none;
+}
 .separateur span{
-  width: 35%;
+  width: 70%;
   height: 1px;
- background-color: var(--3);
+  background-color: var(--3);
 }
 .separateur img{
-  width: 8%;
+  width: 5%;
   height: 100%;
   border-radius: 50%;
   background-color: var(--primary);
   padding: 0 1.5em 0 1.5em;
 }
+
+
 .down{
-margin-top: 10%;
+  margin-top: 2%;
 }
 .down span {
   display: flex;
@@ -62,17 +68,29 @@ margin-top: 10%;
 }
 form span p{
   color: var(--4);
-  font-family: Poppins;
   font-weight: bolder;
   font-size: 1em;
 }
 .number{
   color: var(--primary);
+  margin:0 1% 0 8%;
 }
 .down span p{
   font-weight: 300;
-  font-size: 4em;
-  margin-left: 5%;
+  font-size: 5em;
   line-height: 1em;
- font-family: PoppinsExtraBoldItalic;
+  font-family: PoppinsExtraBoldItalic;
 }
+.error{
+  color: red;
+  font-size: 0.9em;
+  font-style: italic;
+}
+.errorP{
+color: red;
+}
+.errorInput{
+border: 1px solid red;
+}
+
+
